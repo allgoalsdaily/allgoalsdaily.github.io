@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault | All Goals Daily</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .text-gold { color: #FFD700; } .bg-gold { background-color: #FFD700; }
+        .glass-panel { background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body class="bg-black text-gray-200 font-sans antialiased pt-24 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] relative">
+
+    <nav class="fixed top-0 w-full glass-panel z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center group">
+                <div class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center mr-3"><span class="text-black font-black text-xl">7</span></div>
+                <span class="text-2xl font-black text-white tracking-tighter uppercase">ALL GOALS <span class="text-gold">DAILY</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest">
+                <a href="index.html" class="hover:text-gold transition pb-2">News Dashboard</a>
+                <a href="highlights.html" class="text-gold border-b-2 border-gold pb-2">The Vault</a>
+                <a href="contact.html" class="hover:text-gold transition pb-2">Contact</a>
+            </div>
+            <a href="index.html" class="md:hidden text-white font-bold text-sm uppercase">Back to Menu</a>
+        </div>
+    </nav>
+
+    <section class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-12 uppercase tracking-tight border-l-4 border-gold pl-6">
+            The <span class="text-gold">Vault</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="glass-panel rounded-3xl overflow-hidden hover:shadow-[0_0_20px_rgba(255,215,0,0.3)] transition duration-300">
+                <div class="aspect-video bg-zinc-900 flex items-center justify-center border-b border-white/10">
+                    <span class="text-zinc-600 font-bold uppercase tracking-widest">[ YouTube Embed Here ]</span>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-black text-white mb-2">Bicycle Kick vs Juventus</h3>
+                    <p class="text-zinc-400">The goal that defied gravity and forced rival fans into a standing ovation.</p>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-3xl overflow-hidden hover:shadow-[0_0_20px_rgba(255,215,0,0.3)] transition duration-300">
+                <div class="aspect-video bg-zinc-900 flex items-center justify-center border-b border-white/10">
+                    <span class="text-zinc-600 font-bold uppercase tracking-widest">[ YouTube Embed Here ]</span>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-black text-white mb-2">Porto Rocket</h3>
+                    <p class="text-zinc-400">A 40-yard screamer in the Champions League that secured the Puskas Award.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
