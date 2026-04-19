@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Goals Daily | Premium CR7 Hub</title>
+    
+    <meta property="og:title" content="All Goals Daily | Premium CR7 Hub">
+    <meta property="og:description" content="The ultimate destination for Cristiano Ronaldo highlights, breaking news, and legendary stats.">
+    <meta property="og:image" content="https://allgoalsdaily.github.io/hero.jpg">
+    <meta property="og:url" content="https://allgoalsdaily.github.io/">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .text-gold { color: #FFD700; }
+        .bg-gold { background-color: #FFD700; }
+        .border-gold { border-color: #FFD700; }
+        .hover-glow:hover { box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); transform: translateY(-4px); }
+        .glass-panel { background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body class="bg-black text-gray-200 font-sans antialiased pt-24 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] relative">
+
+    <nav class="fixed top-0 w-full glass-panel z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center group">
+                <div class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center mr-3 group-hover:rotate-12 transition duration-300 shadow-[0_0_15px_rgba(255,215,0,0.5)]">
+                    <span class="text-black font-black text-xl">7</span>
+                </div>
+                <span class="text-2xl font-black text-white tracking-tighter uppercase">ALL GOALS <span class="text-gold">DAILY</span></span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest">
+                <a href="index.html" class="text-gold border-b-2 border-gold pb-2">News Dashboard</a>
+                <a href="highlights.html" class="hover:text-gold transition pb-2">The Vault</a>
+                <a href="contact.html" class="hover:text-gold transition pb-2">Contact</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8 hover:text-gold transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-white/10 flex flex-col items-center py-6 space-y-6 font-bold uppercase tracking-widest text-sm">
+             <a href="index.html" class="text-gold">News Dashboard</a>
+             <a href="highlights.html" class="text-white hover:text-gold transition">The Vault</a>
+             <a href="contact.html" class="text-white hover:text-gold transition">Contact</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            
+            <article class="lg:col-span-3 relative glass-panel rounded-3xl overflow-hidden group cursor-pointer transition-all duration-500 hover-glow">
+                <div class="h-96 w-full relative overflow-hidden">
+                    <img src="hero.jpg" alt="Ronaldo" class="object-cover w-full h-full opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                </div>
+                <div class="absolute bottom-0 p-8 w-full">
+                    <span class="bg-gold text-black text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Exclusive Video</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-3 group-hover:text-gold transition">
+                        THE 900 GOAL MILESTONE: A cinematic look at history.
+                    </h2>
+                </div>
+            </article>
+
+            <aside class="glass-panel rounded-3xl p-6 flex flex-col justify-between border-t-4 border-t-gold hover-glow transition-all duration-500">
+                <div>
+                    <h3 class="text-zinc-400 font-bold uppercase tracking-widest text-xs mb-6 text-center">Current Season</h3>
+                    <div class="flex justify-center mb-6">
+                        <div class="w-32 h-32 rounded-full border-4 border-zinc-800 overflow-hidden relative shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                            <img src="stats.jpg" alt="Profile" class="object-cover w-full h-full scale-125 translate-y-2">
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                            <span class="text-zinc-500 font-bold uppercase text-sm">Goals</span>
+                            <span class="text-2xl font-black text-white">35</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                            <span class="text-zinc-500 font-bold uppercase text-sm">Assists</span>
+                            <span class="text-2xl font-black text-white">11</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <article class="lg:col-span
