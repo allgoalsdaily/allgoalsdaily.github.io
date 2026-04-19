@@ -1,0 +1,1 @@
+# allgoalsdaily.github.io
