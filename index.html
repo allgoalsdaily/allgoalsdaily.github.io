@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Goals Daily | Command Center</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], sports: ['Bebas Neue', 'cursive'], },
+                    colors: { gold: '#FFD700', dark: '#050505', },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #e5e5e5; overflow-x: hidden; }
+        .text-outline { color: transparent; -webkit-text-stroke: 1px rgba(255, 215, 0, 0.4); }
+        .text-outline:hover { color: rgba(255, 215, 0, 0.1); -webkit-text-stroke: 2px #FFD700; text-shadow: 0 0 30px rgba(255,215,0,0.4); transition: 0.5s ease; }
+        .glass-ultra { background: linear-gradient(135deg, rgba(20,20,20,0.9), rgba(5,5,5,0.95)); backdrop-filter: blur(25px); border: 1px solid rgba(255,215,0,0.2); }
+        .modal-glass { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(30px); border: 1px solid rgba(255,215,0,0.3); box-shadow: 0 0 50px rgba(0,0,0,0.8); }
+        
+        .marquee-container { width: 100vw; overflow: hidden; white-space: nowrap; border-top: 1px solid rgba(255,215,0,0.2); border-bottom: 1px solid rgba(255,215,0,0.2); background: #000; padding: 10px 0; }
+        .marquee-content { display: inline-block; animation: marquee 25s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-black">
+
+    <nav class="fixed top-0 w-full z-40 bg-gradient-to-b from-black via-black/90 to-transparent pt-6 pb-8 px-8 flex justify-between items-center">
+        <a href="index.html" class="group">
+            <span class="font-sports text-4xl md:text-5xl tracking-widest text-white group-hover:text-gold transition duration-500 drop-shadow-2xl">AGD.</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-10 font-bold text-xs uppercase tracking-[0.3em] text-white">
+            <a href="index.html" class="text-gold border-b border-gold pb-1">Dashboard</a>
+            <a href="highlights.html" class="hover:text-gold transition pb-1">Vault</a>
+            <a href="contact.html" class="hover:text-gold transition pb-1">Contact</a>
+            <button onclick="toggleModal('loginModal')" class="bg-gold text-black px-6 py-2 rounded-full font-bold tracking-widest hover:bg-white transition shadow-[0_0_15px_rgba(255,215,0,0.4)]">
+                MEMBER LOGIN
+            </button>
+        </div>
+    </nav>
+
+    <div id="loginModal" class="fixed inset-0 z-50 hidden flex justify-center items-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="modal-glass w-full max-w-md p-10 rounded-3xl relative transform scale-95 transition-transform duration-300" id="loginBox">
+            <button onclick="toggleModal('loginModal')" class="absolute top-6 right-6 text-zinc-500 hover:text-white transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="text-center mb-8">
+                <h2 class="font-sports text-4xl text-white tracking-widest">ACCESS <span class="text-gold">TERMINAL</span></h2>
+                <p class="text-zinc-400 text-xs uppercase tracking-widest mt-2">Enter credentials to proceed</p>
+            </div>
+
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Login System UI Active! Backend database required for real authentication.'); toggleModal('loginModal');">
+                <div>
+                    <label class="block text-gold text-[10px] font-bold uppercase tracking-widest mb-2">Email Address</label>
+                    <input type="email" required class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition" placeholder="cr7fan@example.com">
+                </div>
+                <div>
+                    <label class="block text-gold text-[10px] font-bold uppercase tracking-widest mb-2">Password</label>
+                    <input type="password" required class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold transition" placeholder="••••••••">
+                </div>
+                <button type="submit" class="w-full bg-gold text-black font-bold uppercase tracking-[0.2em] text-sm py-4 rounded-xl hover:bg-white transition mt-4 shadow-[0_0_20px_rgba(255,215,0,0.3)]">
+                    AUTHENTICATE
+                </button>
+                <p class="text-center text-zinc-500 text-xs mt-4">Don't have an account? <a href="#" class="text-white hover:text-gold transition">Join the Legacy</a></p>
+            </form>
+        </div>
+    </div>
+
+    <header class="relative pt-32 pb-12 w-full flex flex-col items-center justify-center overflow-hidden border-b border-zinc-900">
+        <h1 class="font-sports text-[12vw] leading-none tracking-tighter text-outline z-20 cursor-default relative">CRISTIANO</h1>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
+    </header>
+
+    <div class="marquee-container relative z-30 shadow-2xl">
+        <div class="marquee-content font-sports text-3xl tracking-widest text-gold opacity-90">
+            DATA CENTER ONLINE • COMMAND DASHBOARD ACTIVE • TRACKING FIXTURES • ANALYZING WIN PROBABILITIES • DATA CENTER ONLINE • COMMAND DASHBOARD ACTIVE • 
+        </div>
+    </div>
+
+    <main class="max-w-[1500px] mx-auto px-4 sm:px-6 py-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+            
+            <div class="lg:col-span-2 glass-ultra rounded-3xl p-8 relative overflow-hidden border-t-2 border-t-red-600">
+                <div class="absolute inset-0 opacity-20 bg-[url('stadium.jpg')] bg-cover bg-center"></div>
+                <div class="relative z-10">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="flex items-center text-red-500 font-bold uppercase tracking-widest text-xs"><span class="w-2 h-2 bg-red-500 rounded-full animate-ping mr-2"></span> Next Match</span>
+                        <span class="text-zinc-400 font-mono text-xs">SAUDI PRO LEAGUE</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="text-center">
+                            <span class="font-sports text-5xl text-white">ALN</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-black/80 text-gold font-mono font-bold px-6 py-3 rounded-lg border border-gold/30 tracking-widest text-xl shadow-[0_0_15px_rgba(255,215,0,0.2)]">48:12:05</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="font-sports text-5xl text-zinc-600">HIL</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest mb-2">
+                            <span class="text-gold">ALN Win: 65%</span>
+                            <span class="text-white">HIL Win: 15%</span>
+                        </div>
+                        <div class="w-full h-3 bg-zinc-900 rounded-full overflow-hidden flex">
+                            <div class="bg-gold h-full w-[65%]"></div>
+                            <div class="bg-zinc-600 h-full w-[20%]"></div>
+                            <div class="bg-white h-full w-[15%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-ultra rounded-3xl p-8 flex flex-col justify-between">
+                <span class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-4 block">Global Target</span>
+                <h3 class="font-sports text-5xl text-white tracking-widest mb-1">FIFA 2026</h3>
+                <span class="text-zinc-500 text-xs tracking-widest uppercase block mb-6">NORTH AMERICA</span>
+                <div class="mt-auto">
+                    <span class="block text-6xl font-sports text-gold">45 <span class="text-2xl text-zinc-500">DAYS</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-4 mb-8">
+            <h2 class="font-sports text-4xl text-white tracking-widest">THE <span class="text-gold">VAULT</span></h2>
+            <a href="highlights.html" class="bg-zinc-900 border border-zinc-700 text-white px-4 py-2 rounded text-xs font-bold uppercase tracking-widest hover:border-gold hover:text-gold transition">View All Video</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            
+            <div class="glass-ultra p-4 rounded-3xl border border-zinc-800 shadow-2xl">
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-900">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/YOUR_YOUTUBE_LINK_1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="pt-6 pb-2 px-2">
+                    <span class="text-red-500 text-[10px] font-bold uppercase tracking-widest border border-red-500/30 px-2 py-1 rounded mb-3 inline-block">Goal 900</span>
+                    <h3 class="font-sports text-3xl text-white tracking-wide">HISTORIC MILESTONE: EVERY ANGLE</h3>
+                </div>
+            </div>
+
+            <div class="glass-ultra p-4 rounded-3xl border border-zinc-800 shadow-2xl">
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-900">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/YOUR_YOUTUBE_LINK_2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="pt-6 pb-2 px-2">
+                    <span class="text-gold text-[10px] font-bold uppercase tracking-widest border border-gold/30 px-2 py-1 rounded mb-3 inline-block">Skills & Drills</span>
+                    <h3 class="font-sports text-3xl text-white tracking-wide">TRAINING CAMP INTENSITY</h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black py-12 text-center border-t border-zinc-900">
+        <h2 class="font-sports text-3xl text-zinc-800 tracking-widest mb-2">AGD.</h2>
+        <p class="text-zinc-600 text-[10px] tracking-[0.3em] uppercase">Data Center &copy; 2026. Built for Greatness.</p>
+    </footer>
+
+    <script>
+        function toggleModal(modalID) {
+            const modal = document.getElementById(modalID);
+            const box = document.getElementById('loginBox');
+            
+            if (modal.classList.contains('hidden')) {
+                // Open Modal
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    box.classList.remove('scale-95');
+                    box.classList.add('scale-100');
+                }, 10);
+            } else {
+                // Close Modal
+                modal.classList.add('opacity-0');
+                box.classList.remove('scale-100');
+                box.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+    </script>
+</body>
+</html>
